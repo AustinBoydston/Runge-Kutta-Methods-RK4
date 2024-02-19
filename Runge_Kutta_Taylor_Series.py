@@ -1,6 +1,8 @@
-#Austin Boydston
-#Numerical Analysis 
-#Homework week 11
+#Author: Austin Boydston
+#Date: 04/19/2022
+
+# This program calculates the RK4 Runge Kutta method. This method utilizes the taylor series and eulers method to find approximate solutions to non-linear equations.
+# For more information visit https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods 
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -51,6 +53,8 @@ def fun_bx(x, t):
 def fun_bt(x, t):
    # return (2*np.cos(2*t) *t*t - 2*t*np.sin(2*t))/(t*t*t*t) + (2*x)/(t*t)
     return -2*(np.sin(2*t) - t*np.cos(2*t) - t)/(t*t*t)
+
+
 #second derivatives
 def fun_bxx(x, t):
     return 0
@@ -58,6 +62,8 @@ def fun_bxt(x, t):
     return 2/(t*t)
 def fun_btt(x, t):
     return -((4*t*t - 6)*np.sin(2*t) + 8 * t * np.cos(2*t) + 4*t*x)/(t*t*t*t)
+
+
 #Third Derivatives
 def fun_bxxx(x, t):
     return 0
@@ -75,6 +81,8 @@ def fun_bttx(x, t):
     return (4/(t*t*t))
 def fun_bttt(x, t):
     return -((24*t*t-24)*np.sin(2*t)+(36*t-8*t*t*t)*np.cos(2*t)+12*t*x)/(t*t*t*t*t)
+
+
 #Forth Derivatives
 def fun_btxtt(x, t):
     return 12/(t*t*t*t)
